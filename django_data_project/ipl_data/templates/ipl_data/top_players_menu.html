@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>Top players</title>
+</head>
+
+<body style="padding: 10%">
+    <h1 style="text-align: center">Top 10 Players per season<br>(based on the No. of Man of the match titles)</h1>
+    <h2>Select season : </h2>
+    <form method="POST" action="">
+        <div class="form-group form-control-lg">
+            {% csrf_token %}
+            <select class="form-control" name="year">
+                <option>--Years--</option>
+                <option>2008</option>
+                <option>2009</option>
+                <option>2010</option>
+                <option>2011</option>
+                <option>2012</option>
+                <option>2013</option>
+                <option>2014</option>
+                <option>2015</option>
+                <option>2016</option>
+                <option>2017</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Go!</button>
+    </form>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>

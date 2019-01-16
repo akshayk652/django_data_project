@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Ipl Info</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body style="padding: 10%">
+
+    <div class="container-fluid" style="padding: 2%">
+        <h1 style="text-align: center">IPL DATA INFO!</h1>
+        <div>
+            <h2>See Data</h2>
+            <a href="{% url 'ipl-data-matches_played' %}" class="btn btn-primary">Matches Played per season</a>
+            <a href="{% url 'ipl-data-matches_won' %}" class="btn btn-primary">Matches Won</a>
+            <a href="{% url 'ipl-data-extra_runs' %}" class="btn btn-primary">Extra runs conceded per team</a>
+            <a href="{% url 'ipl-data-top_bowlers' %}" class="btn btn-primary">Top Bowlers</a>
+            <a href="{% url 'ipl-data-top_players' %}" class="btn btn-primary">Top Players</a>
+        </div>
+        <div>
+            <h2>Plot Data(see charts)</h2>
+            <a href="{% url 'ipl-data-matches_played_chart' %}" class="btn btn-primary">Matches Played per season</a>
+            <a href="{% url 'ipl-data-matches_won_chart' %}" class="btn btn-primary">Matches Won</a>
+            <a href="{% url 'ipl-data-extra_runs_chart' %}" class="btn btn-primary">Extra runs conceded per team</a>
+            <a href="{% url 'ipl-data-top_bowlers_chart' %}" class="btn btn-primary">Top Bowlers</a>
+            <a href="{% url 'ipl-data-top_players_chart' %}" class="btn btn-primary">Top Players</a>
+        </div>
+    </div>
+</body>
+
+</html>
+<!-- <div class="col-sm-4" style="background-color:lavender;">.col-sm-4</div>
+    <div class="col-sm-4" style="background-color:lavenderblush;">.col-sm-4</div>
+    <div class="col-sm-4" style="background-color:lavender;">.col-sm-4</div> -->

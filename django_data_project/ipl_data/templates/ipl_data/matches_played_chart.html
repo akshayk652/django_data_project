@@ -1,0 +1,36 @@
+<html>
+<body>
+    <div id="container"></div>
+<script src="https://code.highcharts.com/highcharts.src.js"></script>
+<script>
+  Highcharts.chart('container', {
+      chart: {
+          type: 'column'
+      },
+      title: {
+          text: 'Matches Played per season'
+      },
+      xAxis: {
+        title: {
+              text: 'Season'
+          },
+          categories: [
+            {% for match in matches_played %}'{{ match.season }}'{% if not forloop.last %}, {% endif %}{% endfor %}
+          ]
+      },
+      yAxis: {
+          title: {
+              text: 'No of matches'
+          }
+      },
+      series: [{
+          name: 'Number of Matches',
+          data: [
+            {% for match in matches_played %}{{ match.count }}{% if not forloop.last %}, {% endif %}{% endfor %}
+          ],
+          color: 'green'
+      }]
+  });
+</script>
+</body>
+</html>

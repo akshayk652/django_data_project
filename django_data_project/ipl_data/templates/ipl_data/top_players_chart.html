@@ -1,0 +1,36 @@
+<html>
+<body>
+    <div id="container"></div>
+<script src="https://code.highcharts.com/highcharts.src.js"></script>
+<script>
+  Highcharts.chart('container', {
+      chart: {
+          type: 'column'
+      },
+      title: {
+          text: 'Top Players based on Player of the match titles'
+      },
+      xAxis: {
+        title: {
+              text: 'players'
+          },
+          categories: [
+            {% for player in top_players %}'{{ player.player_of_match }}'{% if not forloop.last %}, {% endif %}{% endfor %}
+          ]
+      },
+      yAxis: {
+          title: {
+              text: 'No of titles'
+          }
+      },
+      series: [{
+          name: 'No of titles',
+          data: [
+            {% for player in top_players %}{{ player.no_of_titles }}{% if not forloop.last %}, {% endif %}{% endfor %}
+          ],
+          color: 'green'
+      }]
+  });
+</script>
+</body>
+</html>

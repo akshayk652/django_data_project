@@ -1,0 +1,36 @@
+<html>
+<body>
+    <div id="container"></div>
+<script src="https://code.highcharts.com/highcharts.src.js"></script>
+<script>
+  Highcharts.chart('container', {
+      chart: {
+          type: 'column'
+      },
+      title: {
+          text: 'Top Economical bowlers of 2015'
+      },
+      xAxis: {
+        title: {
+              text: 'Bowler'
+          },
+          categories: [
+            {% for bowler in top_bowlers %}'{{ bowler.bowler }}'{% if not forloop.last %}, {% endif %}{% endfor %}
+          ]
+      },
+      yAxis: {
+          title: {
+              text: 'Economy'
+          }
+      },
+      series: [{
+          name: 'Economy',
+          data: [
+            {% for bowler in top_bowlers %}{{ bowler.economy }}{% if not forloop.last %}, {% endif %}{% endfor %}
+          ],
+          color: 'green'
+      }]
+  });
+</script>
+</body>
+</html>
