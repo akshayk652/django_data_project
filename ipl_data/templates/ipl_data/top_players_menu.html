@@ -12,8 +12,8 @@
     <h1 style="text-align: center">Top 10 Players per season<br>(based on the No. of Man of the match titles)</h1>
     <h2>Select season : </h2>
     <form method="POST" action="">
+        {% csrf_token %}
         <div class="form-group form-control-lg">
-            {% csrf_token %}
             <select class="form-control" name="year">
                 <option>--Years--</option>
                 <option>2008</option>
