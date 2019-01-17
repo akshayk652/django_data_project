@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'django_data_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'this_is_ipl',
+        'NAME': 'ipl_db',
         'USER': 'akshay',
         'PASSWORD': 'incorrect',
         'HOST': 'localhost',
