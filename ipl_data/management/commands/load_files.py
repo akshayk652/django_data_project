@@ -2,6 +2,8 @@ from django.core.management.base import BaseCommand, CommandError
 from ipl_data.models import Matches, Deliveries
 from django.db import connection, transaction
 import csv
+import os
+import sys
 
 
 class Command(BaseCommand):
@@ -10,8 +12,8 @@ class Command(BaseCommand):
     
     def handle(self, *args, **kwargs):
 
-        matches_reader = csv.DictReader(open('/home/monk/mountblue/ipl-data-set/matches.csv'))
-        deliveries_reader = csv.DictReader(open('/home/monk/mountblue/ipl-data-set/deliveries.csv'))
+        matches_reader = csv.DictReader(open(os.path.join(os.getcwd(), 'matches.csv')))
+        deliveries_reader = csv.DictReader(open(os.path.join(os.getcwd(), 'deliveries.csv')))
 
         with transaction.atomic():
             for match in matches_reader:
